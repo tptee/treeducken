@@ -4,11 +4,11 @@
   "description": "Stuffing a bit of Elm into your Redux!",
   "main": "lib/index.js",
   "scripts": {
-    "postinstall": "cd lib || npm run build-lib",
+    "postinstall": "cd lib || npm run build",
     "preversion": "npm run check",
     "version": "npm run clean && npm run build",
     "clean": "rimraf lib",
-    "build": "npm run clean-lib && babel src -d lib --copy-files",
+    "build": "npm run clean && babel src -d lib --copy-files",
     "lint": "eslint --color --ext .js,.jsx src test demo/*.js*",
     "test": "mocha test 'test/**/*.spec.js*'",
     "coverage": "nyc --source-map false --instrument false mocha test 'test/**/*.spec.js*'",
