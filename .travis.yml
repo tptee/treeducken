@@ -16,7 +16,8 @@ before_install:
 script:
   - npm --version
   - npm run coverage
-  - nyc report --reporter=text-lcov | node_modules/.bin/coveralls || echo "Coveralls upload failed"
+  # Figure out what the hell is wrong with the lcov reporters
+  # - nyc report --reporter=text-lcov | node_modules/.bin/coveralls || echo "Coveralls upload failed"
 
   - npm prune --production
   - npm run build
